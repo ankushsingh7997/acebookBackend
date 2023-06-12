@@ -6,6 +6,7 @@ const morgan=require('morgan');
 const { dbConnection } = require('./src/db/dbConnection');
 const userRouter = require('./src/routes/users');
 const authRouter = require('./src/routes/auth');
+const postRouter=require('./src/routes/posts')
 const multer=require('multer')
 require('dotenv').config();
 const PORT=process.env.PORT ||4000;
@@ -46,6 +47,7 @@ app.use((req, res, next) => {
 
   app.use('/api/user',userRouter)
   app.use('/api/auth',authRouter)
+  app.use('/api/posts',postRouter)
 
   app.listen(PORT,()=>{
     console.log(`application is running on ${PORT} 🟢` );
