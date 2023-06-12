@@ -1,12 +1,18 @@
 const express=require('express');
+const { login } = require('../controllers/user/loggin');
+const { userUpdate } = require('../controllers/user/updateuser');
+const { deleteUser } = require('../controllers/user/deleteUser');
+const { follow } = require('../controllers/user/followUser');
 const router=express.Router();
 
 
 
 
-router.get('/',(req,res)=>{
-    return res.status(200).send({status:true,message:"this is user api"})
-})
+router.post('/',login)
+router.post('/:id',userUpdate)
+router.post('/:id',deleteUser)
+router.post('/:id/follow',follow)
+
 
 
 
