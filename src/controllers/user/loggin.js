@@ -53,7 +53,7 @@ const login = async  (req, res)=> {
    
       };
       
-    return res.status(200).send({ status: true, message: "User login successfull", data });
+    return res.status(200).send({ status: true, message: "User login successfull", userData });
   }
    catch (error) 
    {
