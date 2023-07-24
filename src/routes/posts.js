@@ -6,11 +6,12 @@ const { likePost } = require('../controllers/posts/like');
 const { getPost } = require('../controllers/posts/get');
 const { getTimelinePost } = require('../controllers/posts/getTimelinePosts');
 const { getUserPost } = require('../controllers/posts/getUserPost');
+const upload=require('../multer/multer')
 
 const router=express.Router();
 
 
-router.post('/:id/',createPost)
+router.post('/:id/',upload.single('image'),createPost)
 router.put('/:id/',updatePost)
 router.delete('/:id/',deletePost)
 router.put('/:id/like',likePost)

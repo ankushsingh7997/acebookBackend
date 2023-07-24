@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(helmet())
 app.use(morgan('dev'));
 app.use(cors());
-app.use(multer().any())
+// app.use(multer().any())
 
 
 app.use(cors({ origin: '*' }));
